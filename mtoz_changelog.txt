@@ -1,0 +1,64 @@
+Current Version: v1.5.0
+
+v1.5.0
+- Fixed some bugs.
+- Added a configuration feature that can decide whether a certain ability is added to a certain special infected type.
+- Added a new zombie type: slime
+Green color.
+It will split into two at death and each will have half the health.
+By default the max splitting count is 3.
+
+v1.4.1
+- Fixed a bug where players could be killed directly when dominated by toxic special infected.
+
+v1.4.0
+- Added separate properties "SpeedFactor0Charger" and "SpeedFactor1Charger" that are lower by default for chargers of speed type.
+- Added a new zombie type: toxic
+It will emit toxic smoke that will poison players in it.
+Players that are attacked by it will also be poisoned.
+The health of the poisoned player will be very low for a while, but will recover as the toxic effect wears off.
+
+v1.3.1
+- Fixed the bug: the scourge type sometimes causes the game to crash.
+- Added integer value support for bool type in configuration system.
+
+v1.3.0
+Major Update
+- (breaking change) Improved the configuration system.
+Files "default_config.nut" and "custom_config.nut" are obsolete.
+- Changed the default configuration.
+- Set a separate property "FlashSlowFactorTank" that is lower by default for tanks of flash type.
+- Set a separate property "HeavyHealthMultiplierCharger" that is lower by default for chargers of heavy type.
+- Set a separate property "ExtraHeavyHealthMultiplierCharger" that is lower by default for chargers of extra heavy type.
+- Weakened the vertical explosion force when players dominated by explosive zombies.
+- (breaking change) Changed names of some chat commands.
+- Added new chat commands.
+- Added a new zombie type: speed
+The speed is a little faster in the normal state.
+If it gets hurt, it's speed will be faster and it will have a random lateral acceleration.
+- Added a new zombie type: flame
+It's immune to fire damage.
+It will create fireballs at the position of the nearest player in a limited range.
+It will ignite nearby flammable and explosive objects(oxygen tank, propane tank, gas can, firework crate).
+- Added a new zombie type: scourge
+It will resurrect dead special infected and the type of resurrected infected has a chance to be the scourge.
+It will spawn common infected near it.
+The health is 2x the normal by default.
+
+
+v1.2.0
+- Changed the default configuration.
+- Fixed the bug where players could sometimes not be pushed away by the explosion and removed the delay of the explosion of the tank rock.
+- Added new abilities to flash type.
+The flash will temporarily disable the glowing effect of zombies(including itself) if there are no barriers between them.
+The flash will slow the player if there are no barriers between them.
+The flash will shake players' screen.
+- Added a new zombie type: Shield
+The health of zombies of shield type will be recoverd continuously until the shield is broken.
+The lower the health of shield is, the faster the zombie flickers. When the shield breaks, the zombie no longer glows.
+
+
+v1.1.0
+- Now the explosion of the explosive type can push players.
+- Supported the tank and witch. The tank rock has specific ability according to the zombie type.
+- Added a option to choose the flash color(black or white), and set the color to black by default.
