@@ -44,11 +44,11 @@ code <- @"{
     FlameIgniteObjectsPeriod = 2.0
 
     ScourgeHealthMultiplier = 2.0
-    ScourgeResurrectTime = 3.0
-    ScourgeResurrectRange = 1500.0
+    ScourgeResurrectTime = 5.0
+    ScourgeResurrectRange = 1000.0
     ScourgeResurrectSimulMax = 2
     ScourgeResurrectQueueCapacity = 4
-    ScourgeResurrectToScourgeProb = 0.5
+    ScourgeResurrectToScourgeProb = 0.3
     ScourgeSpawnCommonInfectedCount = 10
     ScourgeSpawnCommonInfectedPeriod = 8.0
     ScourgeCommonInfectedLimit = 60
