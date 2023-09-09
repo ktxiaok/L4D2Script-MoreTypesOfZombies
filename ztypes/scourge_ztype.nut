@@ -83,6 +83,8 @@ class ScourgeZtypeInstance extends ZtypeInstance
     _resurrectActivities = null;
     _queuedResurrectActivities = null;
 
+    _resurrectCount = 0;
+
     _commonSpawnTimer = null;
 
     constructor(zombie)
@@ -153,6 +155,11 @@ class ScourgeZtypeInstance extends ZtypeInstance
 
     function TryAddResurrectActivity(zombie)
     {
+        local maxCount = GetResurrectMaxCount();
+        if (_resurrectCount >= maxCount)
+        {
+            return;
+        }
         if (zombie == _zombie)
         {
             return;
@@ -195,6 +202,7 @@ class ScourgeZtypeInstance extends ZtypeInstance
         {
             activity.Activate();
             _resurrectActivities.append(activity);
+            _resurrectCount++;
             return true;
         }
         return false;
@@ -208,6 +216,11 @@ class ScourgeZtypeInstance extends ZtypeInstance
     function GetResurrectSimulMax()
     {
         return _ctx.GetCfgProp("ScourgeResurrectSimulMax");
+    }
+
+    function GetResurrectMaxCount()
+    {
+        return _ctx.GetCfgProp("ScourgeResurrectMaxCount");
     }
 
     function GetCommonSpawnPeriod()

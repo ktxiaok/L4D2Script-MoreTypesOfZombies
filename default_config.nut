@@ -44,6 +44,7 @@ code <- @"{
     FlameIgniteObjectsPeriod = 2.0
 
     ScourgeHealthMultiplier = 2.0
+    ScourgeResurrectMaxCount = 5
     ScourgeResurrectTime = 5.0
     ScourgeResurrectRange = 1000.0
     ScourgeResurrectSimulMax = 2

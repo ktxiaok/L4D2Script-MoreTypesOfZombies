@@ -358,6 +358,7 @@ function DefineProperties()
     DefineProperty({name = "FlameIgniteObjectsPeriod", type = "float", setter = "range(0.0)"});
 
     DefineProperty({name = "ScourgeHealthMultiplier", type = "float", setter = "range(0.0)"});
+    DefineProperty({name = "ScourgeResurrectMaxCount", type = "integer", setter = "range(1)"});
     DefineProperty({name = "ScourgeResurrectTime", type = "float", setter = "range(0.0)"});
     DefineProperty({name = "ScourgeResurrectRange", type = "float", setter = "range(0.0)"});
     DefineProperty({name = "ScourgeResurrectSimulMax", type = "integer", setter = "range(0)"});
