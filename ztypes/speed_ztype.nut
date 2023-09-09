@@ -165,11 +165,13 @@ class SpeedZtypeInstance extends ZtypeInstance
     function EnableColor()
     {
         _ctx.SetZombieColor(_zombie, SpeedZtypeColor);
+        _ctx.SetZombieGlowFactor(_zombie, 0.3);
     }
 
     function DisableColor()
     {
-        _ctx.SetZombieColor(_zombie, 0);
+        _ctx.SetZombieColor(_zombie, 0xffffff);
+        _ctx.SetZombieGlowFactor(_zombie, 0.0);
     }
 
     function GetSpeedFactor0()
