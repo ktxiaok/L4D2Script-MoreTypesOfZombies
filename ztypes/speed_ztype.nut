@@ -28,10 +28,10 @@ class SpeedZtype extends Ztype
         return "speed";
     }
 
-    function GetColor()
-    {
-        return SpeedZtypeColor;
-    }
+    // function GetColor()
+    // {
+    //     return SpeedZtypeColor;
+    // }
 
     function IsHurtListeningEnabled()
     {
@@ -60,6 +60,7 @@ class SpeedZtypeInstance extends ZtypeInstance
             _isCharger = true;
         }
         SetSpeed0();
+        EnableColor();
         InitShadow();
         InitTask();
     }
@@ -98,6 +99,7 @@ class SpeedZtypeInstance extends ZtypeInstance
         _isHurting = true;
         _hurtTimer = 0.0;
         SetSpeed1();
+        DisableColor();
         EnableShadow();
     }
 
@@ -127,6 +129,7 @@ class SpeedZtypeInstance extends ZtypeInstance
             {
                 _isHurting = false;
                 SetSpeed0();
+                EnableColor();
                 DisableShadow();
             }
         }
@@ -157,6 +160,16 @@ class SpeedZtypeInstance extends ZtypeInstance
     function SetSpeed1()
     {
         _ctx.SetSpeedFactor(_zombie, GetSpeedFactor1());
+    }
+
+    function EnableColor()
+    {
+        _ctx.SetZombieColor(_zombie, SpeedZtypeColor);
+    }
+
+    function DisableColor()
+    {
+        _ctx.SetZombieColor(_zombie, 0);
     }
 
     function GetSpeedFactor0()
