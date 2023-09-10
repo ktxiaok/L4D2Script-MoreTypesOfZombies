@@ -408,3 +408,8 @@ function AddPlayerHealthBuffer(player, increment)
     }
     player.SetHealthBuffer(healthBuffer);
 }
+
+function IsPlayerGrounded(player)
+{
+    return NetProps.GetPropEntity(player, "m_hGroundEntity") != null;
+}
