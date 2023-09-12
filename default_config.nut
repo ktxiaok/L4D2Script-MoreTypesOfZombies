@@ -66,6 +66,12 @@ code <- @"{
     SlimeMaxSplitCount = 3
     SlimePoppingSpeed = 500.0
 
+    BhopJumpAccel = 300.0
+    BhopLateralAccel = 75.0
+    BhopInitialAccel = 100.0
+    BhopAccelIncrement = 50.0
+    BhopAccelMaxCount = 4
+
     // The ZTSPW means Zombie Type Spawning Probability Weight.
     // If the weight of a type is negative, the type will be never spawned naturally.
     ZTSPW_normal = 12.0
@@ -81,6 +87,7 @@ code <- @"{
     ZTSPW_scourge = 1.0
     ZTSPW_toxic = 1.0
     ZTSPW_slime = 1.0
+    ZTSPW_bhop = 1.0
 
     // The ZTLimit means the max number of zombies of that type that can exist at the same time.
     // Zero means no limit.
@@ -96,6 +103,7 @@ code <- @"{
     ZTLimit_scourge = 0
     ZTLimit_toxic = 0
     ZTLimit_slime = 0
+    ZTLimit_bhop = 0
 
     // ZT_Allow(Smoker/Boomer/Hunter/...)_x means whether or not the zombie type x will be spawned.
     // 1 means yes and 0 means no.
@@ -206,5 +214,14 @@ code <- @"{
     ZT_AllowCharger_slime = 1
     ZT_AllowWitch_slime = 0
     ZT_AllowTank_slime = 0
+
+    ZT_AllowSmoker_bhop = 1
+    ZT_AllowBoomer_bhop = 1
+    ZT_AllowHunter_bhop = 1
+    ZT_AllowSpitter_bhop = 1
+    ZT_AllowJockey_bhop = 1
+    ZT_AllowCharger_bhop = 1
+    ZT_AllowWitch_bhop = 0
+    ZT_AllowTank_bhop = 0
 }
 "

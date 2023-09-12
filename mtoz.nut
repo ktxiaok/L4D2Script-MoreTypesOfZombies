@@ -305,6 +305,7 @@ IncludeScript("ktscript/more_types_of_zombies/ztypes/flame_ztype");
 IncludeScript("ktscript/more_types_of_zombies/ztypes/scourge_ztype");
 IncludeScript("ktscript/more_types_of_zombies/ztypes/toxic_ztype");
 IncludeScript("ktscript/more_types_of_zombies/ztypes/slime_ztype");
+IncludeScript("ktscript/more_types_of_zombies/ztypes/bhop_ztype");
 
 _config <- {};
 
@@ -379,6 +380,12 @@ function DefineProperties()
 
     DefineProperty({name = "SlimeMaxSplitCount", type = "integer", setter = "range(1)"});
     DefineProperty({name = "SlimePoppingSpeed", type = "float", setter = "range(0.0)"});
+
+    DefineProperty({name = "BhopJumpAccel", type = "float", setter = "range(0.0)"});
+    DefineProperty({name = "BhopLateralAccel", type = "float", setter = "range(0.0)"});
+    DefineProperty({name = "BhopInitialAccel", type = "float", setter = "range(0.0)"});
+    DefineProperty({name = "BhopAccelIncrement", type = "float", setter = "range(0.0)"});
+    DefineProperty({name = "BhopAccelMaxCount", type = "integer", setter = "range(1)"});
 
     DefineProperty({name = "ZTSPW_normal", type = "float"});
     foreach (ztype in GetAllZtypes())
@@ -551,6 +558,7 @@ function CreateAllZtypes()
     ScourgeZtype();
     ToxicZtype();
     SlimeZtype();
+    BhopZtype();
 }
 
 function SpawnZombie(basicName, ztypeName, pos)
