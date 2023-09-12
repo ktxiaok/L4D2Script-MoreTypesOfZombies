@@ -69,7 +69,7 @@ code <- @"{
     BhopJumpAccel = 300.0
     BhopLateralAccel = 75.0
     BhopInitialAccel = 100.0
-    BhopAccelIncrement = 50.0
+    BhopAccelIncrement = 75.0
     BhopAccelMaxCount = 4
 
     // The ZTSPW means Zombie Type Spawning Probability Weight.
