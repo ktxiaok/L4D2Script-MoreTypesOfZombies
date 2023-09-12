@@ -817,6 +817,7 @@ function InitChatCmds()
                 else
                 {
                     SetCfgProp(name, val);
+                    ApplyConfig();
                     Say(null, format("Set the property %s to %s successfully!", name, val.tostring()), false);
                 }
             }
