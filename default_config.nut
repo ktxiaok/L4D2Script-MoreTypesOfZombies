@@ -45,7 +45,7 @@ code <- @"{
 
     ScourgeHealthMultiplier = 2.0
     ScourgeResurrectMaxCount = 5
-    ScourgeResurrectTime = 5.0
+    ScourgeResurrectTime = 4.0
     ScourgeResurrectRange = 1000.0
     ScourgeResurrectSimulMax = 2
     ScourgeResurrectQueueCapacity = 4
