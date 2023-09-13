@@ -1,4 +1,14 @@
-Current Version: v1.5.0
+Current Version: v1.6.0
+
+v1.6.0
+- Fixed some bugs.
+- Modified the default config.
+- Speed type zombies will temporarily disable the glow when hurt.
+- Added a limit of max count of resurrecting to the scourge type.
+- Added a new zombie type: bhop
+Just as its name implies.
+- Added a new zombie type: teleporter
+It will teleport to a random location when it takes enough damage.
 
 v1.5.0
 - Fixed some bugs.

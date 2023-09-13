@@ -13,7 +13,7 @@ PrecacheModel(NullModelName);
 
 local _ctx = this;
 
-_version <- "1.5.0";
+_version <- "1.6.0";
 
 _basicZtypeNameToInt <- {
     smoker = 1,
