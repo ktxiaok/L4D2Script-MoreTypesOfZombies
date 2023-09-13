@@ -4,9 +4,12 @@ AutoLoadConfigNameFilePath <- ConfigDirectoryPath + "_autoload_.txt";
 ReadmeFilePath <- "ktscript/more_types_of_zombies/readme.txt";
 
 const FlashSoundName = "ambient\\fire\\gascan_ignite1.wav";
+const TeleportSoundName = "weapons\\defibrillator\\defibrillator_use.wav";
 PrecacheSound(FlashSoundName);
+PrecacheSound(TeleportSoundName);
 
-PrecacheModel("models/props_doors/null.mdl");
+const NullModelName = "models/props_doors/null.mdl";
+PrecacheModel(NullModelName);
 
 local _ctx = this;
 
@@ -306,6 +309,7 @@ IncludeScript("ktscript/more_types_of_zombies/ztypes/scourge_ztype");
 IncludeScript("ktscript/more_types_of_zombies/ztypes/toxic_ztype");
 IncludeScript("ktscript/more_types_of_zombies/ztypes/slime_ztype");
 IncludeScript("ktscript/more_types_of_zombies/ztypes/bhop_ztype");
+IncludeScript("ktscript/more_types_of_zombies/ztypes/teleporter_ztype");
 
 _config <- {};
 
@@ -386,6 +390,9 @@ function DefineProperties()
     DefineProperty({name = "BhopInitialAccel", type = "float", setter = "range(0.0)"});
     DefineProperty({name = "BhopAccelIncrement", type = "float", setter = "range(0.0)"});
     DefineProperty({name = "BhopAccelMaxCount", type = "integer", setter = "range(1)"});
+
+    DefineProperty({name = "TeleporterTpHealthRatio", type = "float", setter = "range(0.0,1.0)"});
+    DefineProperty({name = "TeleporterTpRadius", type = "float", setter = "range(0.0)"});
 
     DefineProperty({name = "ZTSPW_normal", type = "float"});
     foreach (ztype in GetAllZtypes())
@@ -559,6 +566,7 @@ function CreateAllZtypes()
     ToxicZtype();
     SlimeZtype();
     BhopZtype();
+    TeleporterZtype();
 }
 
 function SpawnZombie(basicName, ztypeName, pos)

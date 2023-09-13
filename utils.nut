@@ -413,3 +413,40 @@ function IsPlayerGrounded(player)
 {
     return NetProps.GetPropEntity(player, "m_hGroundEntity") != null;
 }
+
+function GetDominatedPlayer(zombie)
+{
+    local t = GetBasicZombieType(zombie);
+    if (t == DirectorScript.ZOMBIE_SMOKER)
+    {
+        return NetProps.GetPropEntity(zombie, "m_tongueVictim");
+    }
+    else if (t == DirectorScript.ZOMBIE_HUNTER)
+    {
+        return NetProps.GetPropEntity(zombie, "m_pounceVictim");
+    }
+    else if (t == DirectorScript.ZOMBIE_JOCKEY)
+    {
+        return NetProps.GetPropEntity(zombie, "m_jockeyVictim");
+    }
+    else if (t == DirectorScript.ZOMBIE_CHARGER)
+    {
+        local ent = NetProps.GetPropEntity(zombie, "m_carryVictim");
+        if (ent != null)
+        {
+            return ent;
+        }
+        return NetProps.GetPropEntity(zombie, "m_pummelVictim");
+    }
+    else
+    {
+        return null;
+    }
+}
+
+function EmitAmbientSoundOnPos(soundName, volume, soundLevel, pitch, pos)
+{
+    local posEnt = SpawnEntityFromTable("info_target", {origin = pos});
+    EmitAmbientSoundOn(soundName, volume, soundLevel, pitch, posEnt);
+    posEnt.Kill();
+}
